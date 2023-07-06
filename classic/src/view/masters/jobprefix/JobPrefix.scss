@@ -1,0 +1,44 @@
+@if $theme-name == "theme-classic" or $theme-name == "theme-gray" {
+    .customer-buttons-add {
+        font: 16px/1 "Font Awesome 5 Free";
+        color: $green-icon-color;
+        content: $fa-var-plus-circle;
+    }
+
+    .customer-buttons-option {
+        font: 16px/1 "Font Awesome 5 Free";
+        content: $fa-var-edit;
+    }
+
+    .customer-buttons-remove {
+        font: 16px/1 "Font Awesome 5 Free";
+        color: $red-icon-color;
+        content: $fa-var-trash;
+    }
+
+    // .customer-buttons-grid {
+    //     background-image: url(images/icons/fam/grid.png);
+    // }
+} @else {
+    .customer-buttons-add:before {
+        font: 16px/1 "Font Awesome 5 Free";
+        color: $green-icon-color;
+        content: $fa-var-plus-circle;
+    }
+
+    .customer-buttons-option:before {
+        font: 16px/1 "Font Awesome 5 Free";
+        content: $fa-var-edit;
+    }
+
+    .customer-buttons-remove:before {
+        font: 16px/1 "Font Awesome 5 Free";
+        color: $red-icon-color;
+        content: $fa-var-trash;
+    }
+
+    // .customer-buttons-grid:before {
+    //     font: 16px/1 'Font Awesome 5 Free';
+    //     content: $fa-var-table;
+    // }
+}

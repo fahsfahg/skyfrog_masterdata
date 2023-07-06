@@ -1,0 +1,162 @@
+Ext.define("skyfrog.view.masters.maintenance.MaintenanceForm", {
+  extend: "Ext.window.Window",
+  xtype: "maintenanceform",
+
+  bind: {
+    title: "{title}",
+  },
+  listeners: {
+    beforerender: "beforeDetailRender",
+  },
+
+  bodyPadding: 10,
+  layout: "fit",
+  modal: true,
+  width: 500,
+  height: undefined,
+  closable: false,
+
+  items: {
+    xtype: "form",
+    reference: "groupmasterform",
+    bodyPadding: undefined,
+    border: false,
+    modelValidation: true,
+    layout: {
+      type: "vbox",
+      align: "stretch",
+    },
+    items: [
+      {
+        xtype: "textfield",
+        fieldLabel: 'Description <span style="color: red">*</span>',
+        reference: "description",
+        itemId: "description",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        xtype: "combobox",
+        fieldLabel: "Vehicle Type:",
+        reference: "vehicle",
+        itemId: "vehicle",
+        queryMode: "local",
+        publishes: "value",
+        value: "...",
+        triggerAction: "all",
+        forceSelection: true,
+        editable: false,
+        displayField: "name",
+        valueField: "value",
+        margin: "0 10 5 10",
+        store: {
+          fields: ["name", "value"],
+          data: [
+            {
+              name: "4 W",
+              value: "4 W",
+            },
+            { name: "รถบรรทุก 6 ล้อ", value: "รถบรรทุก 6 ล้อ" },
+            { name: "speed120/7sec", value: "speed120/7sec"},
+            { name: "18 ล้อ", value: "18 ล้อ" }
+          ],
+        },
+      },
+      {
+        xtype: "combobox",
+        fieldLabel: "Type:",
+        reference: "type",
+        itemId: "type",
+        queryMode: "local",
+        publishes: "value",
+        value: "",
+        triggerAction: "all",
+        forceSelection: true,
+        editable: false,
+        displayField: "name",
+        valueField: "value",
+        margin: "0 10 5 10",
+        store: {
+          fields: ["name", "value"],
+          data: [
+            {
+              name: "PM - (Preventive Maintenance)",
+              value: "PM - (Preventive Maintenance)",
+            },
+            {
+              name: "CM - (Corrective Maintenance)",
+              value: "CM - (Corrective Maintenance)",
+            },
+          ],
+        },
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: "Mileages:",
+        reference: "mileages",
+        itemId: "mileages",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: "Month Duration:",
+        reference: "duration",
+        itemId: "duration",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "0 10 5 10",
+      },
+      {
+        xtype: "combobox",
+        fieldLabel: "SubType:",
+        reference: "subtype",
+        itemId: "subtype",
+        queryMode: "local",
+        publishes: "value",
+        value: "",
+        triggerAction: "all",
+        forceSelection: true,
+        editable: false,
+        displayField: "name",
+        valueField: "value",
+        margin: "0 10 5 10",
+        store: {
+          fields: ["name", "value"],
+          data: [
+            {
+              name: "From Month Duration",
+              value: "From Month Duration",
+            },
+            { name: "From Expire Date", value: "From Expire Date" },
+          ],
+        },
+      },
+    ],
+  },
+
+  buttons: [
+    {
+      text: "Save",
+      handler: "onCancelClick",
+    },
+    {
+      text: "Cancel",
+      handler: "onCancelClick",
+    },
+  ],
+});

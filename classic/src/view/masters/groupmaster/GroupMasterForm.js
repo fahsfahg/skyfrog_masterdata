@@ -1,0 +1,118 @@
+Ext.define("skyfrog.view.masters.groupmaster.GroupMasterForm", {
+  extend: "Ext.window.Window",
+  xtype: "groupmasterform",
+
+  bind: {
+    title: "{title}",
+  },
+  listeners: {
+    beforerender: "beforeDetailRender",
+  },
+
+  bodyPadding: 10,
+  layout: "fit",
+  modal: true,
+  width: 500,
+  height: undefined,
+  closable: false,
+
+  items: {
+    xtype: "form",
+    reference: "groupmasterform",
+    bodyPadding: undefined,
+    border: false,
+    modelValidation: true,
+    layout: {
+      type: "vbox",
+      align: "stretch",
+    },
+    checkboxToggle: true,
+    defaultType: "checkbox",
+    items: [
+      {
+        xtype: "grid",
+        autoLoad: true,
+        flex: 1,
+        reference: "latlong",
+        margin: "0 0 0 0",
+        tbar: [
+          {
+            text: "Get Lat Long",
+            handler: "onAddOrderClick",
+          },
+        ],
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: 'Code <span style="color: red">*</span>',
+        reference: "code",
+        itemId: "code",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: 'Name <span style="color: red">*</span>',
+        reference: "groupname",
+        itemId: "groupname",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: "Latitude",
+        reference: "lat",
+        itemId: "lat",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        xtype: "textfield",
+        fieldLabel: "Longitude",
+        reference: "long",
+        itemId: "long",
+        publishes: "value",
+        value: "",
+        labelAsHtml: true,
+        allowBlank: false,
+        msgTarget: "side",
+        padding: undefined,
+        margin: "10 10 5 10",
+      },
+      {
+        checked: true,
+        margin: "0 10 5 10",
+        fieldLabel: "Status:",
+        boxLabel: "Active",
+        name: "status",
+        inputValue: "active",
+      },
+    ],
+  },
+
+  buttons: [
+    {
+      text: "Save",
+      handler: "onCancelClick",
+    },
+    {
+      text: "Cancel",
+      handler: "onCancelClick",
+    },
+  ],
+});

@@ -1,0 +1,19 @@
+/*
+ *  This file can be used to set variables and supply global styling.  View specific 
+ *  styling should be located the view's corresponding scss file.
+ */
+$enable-font-awesome: dynamic(true);
+
+$color-blue: dynamic(#167abc);
+$color-soft-cyan: dynamic(#03b4d5);
+$color-soft-blue: dynamic(#2eadf5);
+$color-soft-green: dynamic(#9cc96b);
+$color-soft-orange: dynamic(#ffc107);
+$color-soft-red: dynamic(#e44959);
+$color-soft-purple: dynamic(#925e8b);
+$color-gray: dynamic(#949495);
+$color-green: dynamic(#16b603);
+
+$red-icon-color: dynamic(#dd6550);
+$green-icon-color: dynamic(#81cb31);
+$yellow-icon-color: dynamic(#ffc839);
